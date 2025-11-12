@@ -2549,9 +2549,11 @@ export default function ProspectResults() {
           }
           prospectId={addToListDialog.prospectId}
           prospectName={addToListDialog.prospectName}
+          prospectIds={addToListDialog.prospectIds}
           lists={lists}
           onListCreated={handleListCreated}
           onProspectAdded={handleProspectAdded}
+          onProspectsAdded={handleProspectsAdded}
         />
       </DashboardLayout>
     </TooltipProvider>

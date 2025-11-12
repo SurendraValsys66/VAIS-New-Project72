@@ -46,6 +46,11 @@ export default function AddToListDialog({
 }: AddToListDialogProps) {
   const { toast } = useToast();
 
+  // Determine if this is a bulk operation
+  const isBulk = prospectIds && prospectIds.length > 0;
+  const currentProspectIds = isBulk ? prospectIds : prospectId ? [prospectId] : [];
+  const currentProspectName = prospectName || `${currentProspectIds.length} prospects`;
+
   // Add scrollbar styling
   React.useEffect(() => {
     const style = document.createElement("style");

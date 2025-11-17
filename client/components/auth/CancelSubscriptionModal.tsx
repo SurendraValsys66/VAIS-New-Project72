@@ -75,8 +75,87 @@ export default function CancelSubscriptionModal({
     setReason("");
   };
 
+  if (showSuccess) {
+    return (
+      <Dialog open={open} onOpenChange={handleClose}>
+        <DialogContent className="max-w-2xl">
+          <div className="flex flex-col items-center justify-center py-8 space-y-6">
+            {/* Success Icon */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-green-100 rounded-full animate-pulse"></div>
+              <div className="relative w-16 h-16 rounded-full bg-green-50 flex items-center justify-center">
+                <CheckCircle className="w-10 h-10 text-green-600" />
+              </div>
+            </div>
+
+            {/* Success Message */}
+            <div className="text-center space-y-3">
+              <h2 className="text-2xl font-bold text-gray-900">
+                Subscription Cancellation Confirmed
+              </h2>
+              <p className="text-gray-600 max-w-md">
+                Your subscription has been successfully cancelled. A confirmation email
+                has been sent to <span className="font-semibold text-gray-900">{email}</span>.
+              </p>
+            </div>
+
+            {/* Details Box */}
+            <div className="w-full bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-3">
+              <h3 className="font-semibold text-gray-900 text-sm">What Happens Next</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="flex items-start gap-2">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-xs font-semibold text-blue-600">1</span>
+                  </div>
+                  <span>Your access to the platform will be revoked immediately</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-xs font-semibold text-blue-600">2</span>
+                  </div>
+                  <span>Your data will be retained for 7 days before permanent deletion</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-xs font-semibold text-blue-600">3</span>
+                  </div>
+                  <span>All active sessions will be terminated for security</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* CTA Section */}
+            <div className="w-full space-y-3 pt-4">
+              <p className="text-center text-sm text-gray-600">
+                Change your mind? Upgrade to a new plan anytime.
+              </p>
+              <div className="flex flex-col-reverse sm:flex-row gap-3">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={handleClose}
+                  className="flex-1 border-gray-300 hover:bg-gray-50"
+                >
+                  Close
+                </Button>
+                <Button
+                  type="button"
+                  onClick={handleUpgrade}
+                  className="flex-1 bg-gradient-to-r from-valasys-orange to-valasys-orange-light text-white shadow-md hover:shadow-lg hover:from-valasys-orange/90 hover:to-valasys-orange-light/90 transition-all"
+                >
+                  <ArrowRight className="w-4 h-4 mr-2" />
+                  Upgrade Plan
+                </Button>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+    );
+  }
+
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={handleClose}>
       <DialogContent className="max-w-2xl">
         <DialogHeader>
           <div className="flex items-start gap-3">

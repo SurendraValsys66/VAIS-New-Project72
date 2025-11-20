@@ -300,11 +300,13 @@ function ModernPaymentCard({
   onDelete,
   onSetDefault,
   onAutopayChange,
+  onEdit,
 }: {
   method: PaymentMethod;
   onDelete: (id: string) => void;
   onSetDefault: (id: string) => void;
   onAutopayChange: (id: string, enabled: boolean) => void;
+  onEdit?: (id: string) => void;
 }) {
   const [deleteOpen, setDeleteOpen] = useState(false);
   const isPayPal = method.type === "paypal";

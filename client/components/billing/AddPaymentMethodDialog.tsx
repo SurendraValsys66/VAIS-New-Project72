@@ -18,7 +18,6 @@ import {
   CreditCard,
   AlertCircle,
   Check,
-  PaypalIcon,
   Zap,
 } from "lucide-react";
 

@@ -437,7 +437,9 @@ function AddPaymentMethodDialog({
                 </div>
                 <div className="text-left">
                   <p className="font-semibold text-gray-900">Card</p>
-                  <p className="text-xs text-gray-500">Visa, Mastercard, Amex</p>
+                  <p className="text-xs text-gray-500">
+                    Visa, Mastercard, Amex
+                  </p>
                 </div>
               </div>
             </AccordionTrigger>
@@ -520,7 +522,14 @@ function AddPaymentMethodDialog({
                           viewBox="0 0 24 24"
                         >
                           <rect x="3" y="6" width="18" height="13" rx="2" />
-                          <rect x="5" y="13" width="14" height="4" fill="currentColor" opacity="0.3" />
+                          <rect
+                            x="5"
+                            y="13"
+                            width="14"
+                            height="4"
+                            fill="currentColor"
+                            opacity="0.3"
+                          />
                         </svg>
                       </div>
                     </div>

@@ -286,39 +286,37 @@ export function AddPaymentMethodDialog({
           </p>
         </DialogHeader>
 
-        <div className="space-y-6 mt-6">
-          <div className="grid grid-cols-2 gap-2 md:gap-3">
+        <div className="space-y-4 mt-4">
+          <div className="grid grid-cols-2 gap-3">
             <button
               onClick={() => {
                 setPaymentType("card");
                 setErrors([]);
               }}
-              className={`group relative p-3 md:p-5 rounded-2xl border-2 transition-all duration-300 transform hover:scale-105 ${
+              className={`group relative px-3 py-3 rounded-xl border-2 transition-all duration-300 ${
                 paymentType === "card"
-                  ? "border-valasys-orange bg-gradient-to-br from-orange-50 to-orange-100 shadow-lg"
-                  : "border-gray-200 hover:border-gray-300 hover:shadow-md"
+                  ? "border-valasys-orange bg-gradient-to-br from-orange-50 to-orange-100 shadow-md"
+                  : "border-gray-200 hover:border-gray-300 hover:shadow-sm"
               }`}
             >
-              <div className="flex flex-col items-center gap-2 md:gap-3">
+              <div className="flex flex-col items-center gap-2">
                 <div
-                  className={`p-2 md:p-3 rounded-xl transition-all transform ${
+                  className={`p-2 rounded-lg transition-all ${
                     paymentType === "card"
-                      ? "bg-gradient-to-r from-valasys-orange to-valasys-orange-light text-white scale-110 shadow-lg"
+                      ? "bg-gradient-to-r from-valasys-orange to-valasys-orange-light text-white shadow-md"
                       : "bg-gray-100 text-gray-600 group-hover:bg-gray-200"
                   }`}
                 >
-                  <CreditCard className="w-5 md:w-6 h-5 md:h-6" />
+                  <CreditCard className="w-5 h-5" />
                 </div>
                 <div className="text-center">
-                  <p className="font-bold text-gray-900 text-sm md:text-base">
-                    Card
-                  </p>
-                  <p className="text-xs text-gray-500 mt-1">Visa, Mastercard</p>
+                  <p className="font-semibold text-gray-900 text-xs">Card</p>
+                  <p className="text-xs text-gray-500">Visa, Mastercard</p>
                 </div>
               </div>
               {paymentType === "card" && (
-                <div className="absolute -top-2 -right-2 bg-gradient-to-r from-valasys-orange to-valasys-orange-light rounded-full p-1 md:p-1.5 shadow-lg animate-bounce">
-                  <Check className="w-3 md:w-4 h-3 md:h-4 text-white" />
+                <div className="absolute -top-1 -right-1 bg-gradient-to-r from-valasys-orange to-valasys-orange-light rounded-full p-1 shadow-md">
+                  <Check className="w-3 h-3 text-white" />
                 </div>
               )}
             </button>
@@ -328,22 +326,22 @@ export function AddPaymentMethodDialog({
                 setPaymentType("paypal");
                 setErrors([]);
               }}
-              className={`group relative p-3 md:p-5 rounded-2xl border-2 transition-all duration-300 transform hover:scale-105 ${
+              className={`group relative px-3 py-3 rounded-xl border-2 transition-all duration-300 ${
                 paymentType === "paypal"
-                  ? "border-valasys-orange bg-gradient-to-br from-orange-50 to-orange-100 shadow-lg"
-                  : "border-gray-200 hover:border-gray-300 hover:shadow-md"
+                  ? "border-valasys-orange bg-gradient-to-br from-orange-50 to-orange-100 shadow-md"
+                  : "border-gray-200 hover:border-gray-300 hover:shadow-sm"
               }`}
             >
-              <div className="flex flex-col items-center gap-2 md:gap-3">
+              <div className="flex flex-col items-center gap-2">
                 <div
-                  className={`p-2 md:p-3 rounded-xl transition-all transform ${
+                  className={`p-2 rounded-lg transition-all ${
                     paymentType === "paypal"
-                      ? "bg-gradient-to-r from-valasys-orange to-valasys-orange-light text-white scale-110 shadow-lg"
+                      ? "bg-gradient-to-r from-valasys-orange to-valasys-orange-light text-white shadow-md"
                       : "bg-gray-100 text-gray-600 group-hover:bg-gray-200"
                   }`}
                 >
                   <svg
-                    className="w-5 md:w-6 h-5 md:h-6"
+                    className="w-5 h-5"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -351,15 +349,13 @@ export function AddPaymentMethodDialog({
                   </svg>
                 </div>
                 <div className="text-center">
-                  <p className="font-bold text-gray-900 text-sm md:text-base">
-                    PayPal
-                  </p>
-                  <p className="text-xs text-gray-500 mt-1">Fast & secure</p>
+                  <p className="font-semibold text-gray-900 text-xs">PayPal</p>
+                  <p className="text-xs text-gray-500">Fast & secure</p>
                 </div>
               </div>
               {paymentType === "paypal" && (
-                <div className="absolute -top-2 -right-2 bg-gradient-to-r from-valasys-orange to-valasys-orange-light rounded-full p-1 md:p-1.5 shadow-lg animate-bounce">
-                  <Check className="w-3 md:w-4 h-3 md:h-4 text-white" />
+                <div className="absolute -top-1 -right-1 bg-gradient-to-r from-valasys-orange to-valasys-orange-light rounded-full p-1 shadow-md">
+                  <Check className="w-3 h-3 text-white" />
                 </div>
               )}
             </button>

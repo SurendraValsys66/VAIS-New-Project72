@@ -55,9 +55,9 @@ export function VAISFeedbackModal({
         <div className="p-6 space-y-6">
           {/* Main Text */}
           <div className="space-y-3 text-center">
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-lg font-bold text-gray-900 leading-relaxed">
               We love to hear from you! How's your experience with the{" "}
-              <span className="text-valasys-orange font-medium">
+              <span className="text-valasys-orange">
                 Valasys AI Score
               </span>
               ?

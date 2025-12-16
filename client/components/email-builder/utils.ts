@@ -250,8 +250,12 @@ export function renderBlockToHTML(block: ContentBlock): string {
       const titleBorder = titleBlock.borderWidth > 0 ? `border: ${titleBlock.borderWidth}px solid ${titleBlock.borderColor};` : "";
       return `<h1 style="font-size: ${titleBlock.fontSize}px; color: ${titleBlock.fontColor}; background-color: ${titleBlock.backgroundColor}; text-align: ${titleBlock.alignment}; font-weight: ${titleBlock.fontWeight}; margin: ${titleBlock.margin}px; padding: ${titleBlock.padding}px; width: ${titleWidth}; border-radius: ${titleBlock.borderRadius}px; ${titleBorder}">${titleBlock.content}</h1>`;
     }
-    case "text":
-      return `<p style="font-size: ${block.fontSize}px; color: ${block.fontColor}; background-color: ${block.backgroundColor}; text-align: ${block.alignment}; font-weight: ${block.fontWeight}; font-style: ${block.fontStyle};">${block.content}</p>`;
+    case "text": {
+      const textBlock = block as TextBlock;
+      const textWidth = textBlock.widthUnit === "%" ? `${textBlock.width}%` : `${textBlock.width}px`;
+      const textBorder = textBlock.borderWidth > 0 ? `border: ${textBlock.borderWidth}px solid ${textBlock.borderColor};` : "";
+      return `<p style="font-size: ${textBlock.fontSize}px; color: ${textBlock.fontColor}; background-color: ${textBlock.backgroundColor}; text-align: ${textBlock.alignment}; font-weight: ${textBlock.fontWeight}; font-style: ${textBlock.fontStyle}; margin: ${textBlock.margin}px; padding: ${textBlock.padding}px; width: ${textWidth}; border-radius: ${textBlock.borderRadius}px; ${textBorder}">${textBlock.content}</p>`;
+    }
     case "image":
       return `<img src="${block.src}" alt="${block.alt}" style="width: ${block.width}px; height: ${block.height}px; display: block; margin: 0 auto;" />`;
     case "video":

@@ -345,32 +345,38 @@ export const EmailBuilder: React.FC<EmailBuilderProps> = ({
       <Dialog open={showSaveDialog} onOpenChange={setShowSaveDialog}>
         <DialogContent className="max-w-md">
           <DialogHeader>
-            <DialogTitle>Save Template</DialogTitle>
-            <DialogDescription>
-              Save this email template for future use
+            <DialogTitle className="text-xl font-bold">Save Template</DialogTitle>
+            <DialogDescription className="text-gray-600">
+              Save this email template to your library for future use
             </DialogDescription>
           </DialogHeader>
-          <div className="space-y-4">
+          <div className="space-y-5 py-4">
             <div>
-              <Label htmlFor="save-name">Template Name</Label>
+              <Label htmlFor="save-name" className="text-sm font-semibold text-gray-700">
+                Template Name
+              </Label>
               <Input
                 id="save-name"
                 value={templateName}
                 onChange={(e) => setTemplateName(e.target.value)}
                 placeholder="e.g., Welcome Email"
+                className="mt-2 focus:ring-valasys-orange focus:ring-2"
               />
             </div>
             <div>
-              <Label htmlFor="save-subject">Email Subject</Label>
+              <Label htmlFor="save-subject" className="text-sm font-semibold text-gray-700">
+                Email Subject
+              </Label>
               <Input
                 id="save-subject"
                 value={templateSubject}
                 onChange={(e) => setTemplateSubject(e.target.value)}
                 placeholder="e.g., Welcome to Valasys"
+                className="mt-2 focus:ring-valasys-orange focus:ring-2"
               />
             </div>
           </div>
-          <DialogFooter>
+          <DialogFooter className="gap-3">
             <Button variant="outline" onClick={() => setShowSaveDialog(false)}>
               Cancel
             </Button>
@@ -378,6 +384,7 @@ export const EmailBuilder: React.FC<EmailBuilderProps> = ({
               onClick={handleSaveTemplate}
               className="bg-valasys-orange hover:bg-valasys-orange/90 text-white"
             >
+              <Save className="w-4 h-4 mr-2" />
               Save Template
             </Button>
           </DialogFooter>

@@ -152,8 +152,16 @@ export interface ButtonBlock {
   backgroundColor: string;
   textColor: string;
   padding: number;
+  margin: number;
   borderRadius: number;
+  borderWidth: number;
+  borderColor: string;
   alignment: "left" | "center" | "right";
+  width: number;
+  widthUnit: "px" | "%";
+  fontSize: number;
+  fontWeight: "normal" | "bold";
+  visibility: "all" | "desktop" | "mobile";
 }
 
 export interface DividerBlock {

@@ -265,6 +265,46 @@ export interface SpacerBlock {
   visibility: "all" | "desktop" | "mobile";
 }
 
+export interface CenteredImageCardBlock {
+  type: "centeredImageCard";
+  id: string;
+  image: string;
+  imageAlt: string;
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonLink: string;
+  buttonLinkType?: "url" | "page" | "email";
+  backgroundColor: string;
+  borderColor: string;
+  borderWidth: number;
+  borderRadius: number;
+  padding: number;
+  margin: number;
+  visibility: "all" | "desktop" | "mobile";
+}
+
+export interface SplitImageCardBlock {
+  type: "splitImageCard";
+  id: string;
+  image: string;
+  imageAlt: string;
+  label?: string;
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonLink: string;
+  buttonLinkType?: "url" | "page" | "email";
+  imagePosition: "left" | "right";
+  backgroundColor: string;
+  borderColor: string;
+  borderWidth: number;
+  borderRadius: number;
+  padding: number;
+  margin: number;
+  visibility: "all" | "desktop" | "mobile";
+}
+
 export type ContentBlock =
   | TitleBlock
   | TextBlock

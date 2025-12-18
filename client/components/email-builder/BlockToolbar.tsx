@@ -1,12 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Plus,
-  ChevronUp,
-  ChevronDown,
-  Copy,
-  Trash2,
-} from "lucide-react";
+import { Plus, ChevronUp, ChevronDown, Copy, Trash2 } from "lucide-react";
 
 interface BlockToolbarProps {
   blockIndex: number;
